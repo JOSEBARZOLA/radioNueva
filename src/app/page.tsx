@@ -1,103 +1,32 @@
-import Image from "next/image";
+import HomePage from './components/HomePage'
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+const radios = [
+  { name: "Rock and Pop", url: "https://27593.live.streamtheworld.com/ROCKANDPOPAAC.aac?dist=triton-widget&tdsdk=js-2.9&swm=false&lat=-32.9&long=-62.4&pname=tdwidgets&pversion=2.9&banners=300x250%2C728x90&burst-time=15&sbmid=ef4971d5-74a0-4e8c-bbed-02f3b606d2eb" },
+  { name: "ASPEN 102.3", url: "https://mdstrm.com/audio/60a2745ff943100826374a70/icecast.audio" },
+  { name: "Vorterix Rock", url: "https://ice2.edge-apps.net/radio1_high-20057.audio" },
+  { name: "radio free rock", url: "https://radioserver11.profesionalhosting.com:19250/live" },
+  { name: "Radio Oldies Rock", url: "https://ice4.abradio.cz/oldiesrock128.mp3" },
+  { name: "HD Radio - Classic Rock", url: "https://hdradioclassicrock-rfritschka.radioca.st/" },
+  { name: "Scandinavian Satellite Radio", url: "https://stream.scansat.no/scansat_hq" },
+  { name: "Myrock Danmark", url: "https://live-bauerdk.sharp-stream.com/myrock_dk_mp3" },
+  { name: "Radio Drunk Norway", url: "https://node-33.zeno.fm/kg271rdzgm0uv" },
+  { name: "Dansbandskanalen Sweden", url: "https://stream.dbmedia.se/dbk96" },
+  { name: "Radio Sound Of Germany", url: "https://beautifulsounds.stream.laut.fm/beautifulsounds" },
+  { name: "Hard Rock Heaven", url: "https://hydra.cdnstream.com/1521_128?" },
+  { name: "Rock Hamburgo", url: "https://stream.laut.fm/radiorock?ref=radiode" },
+  { name: "Radio Rock UK", url: "http://stream.radiojar.com/5exb2mtkunhvv" },
+  { name: "Virgin Radio Lebanon Beirut", url: "https://stream.zeno.fm/dwxw3p9vea0uv" },
+  { name: "RockZone České republiky", url: "https://icecast2.play.cz/rockzone128.mp3" },
+  { name: "KizzRadio České republiky", url: "https://icecast4.play.cz/kissjc128.mp3" },
+  { name: "RockMax České republiky", url: "https://ice.abradio.cz/rockmax128.mp3" },
+  { name: "TheRock NZ", url: "https://digitalstreams.mediaworks.nz/rock_net_icy?Dist=TuneIn" },
+  { name: "SA Rock Radio AU", url: "https://sarock.radioca.st/stream/1/" },
+  { name: "TodayFM Ireland", url: "https://stream.audioxi.com/TDAAC" },
+  { name: "103.2 DublinCity", url: "https://listen-dublincity.sharp-stream.com/dublin_city.mp3" },
+  { name: "Ireland's clasic hits", url: "https://stream.audioxi.com/CLASSIC" },
+  { name: "Radio 60 70 80", url: "https://ice.studiopiu.net/607080.aac" }
+]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+export default function Page() {
+  return <HomePage radios={radios} />
 }
