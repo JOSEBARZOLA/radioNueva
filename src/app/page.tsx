@@ -2,11 +2,11 @@ import HomePage from './components/HomePage'
 
 const radios = [
   { name: "Rock and Pop", url: "https://27593.live.streamtheworld.com/ROCKANDPOPAAC.aac?dist=triton-widget&tdsdk=js-2.9&swm=false&lat=-32.9&long=-62.4&pname=tdwidgets&pversion=2.9&banners=300x250%2C728x90&burst-time=15&sbmid=ef4971d5-74a0-4e8c-bbed-02f3b606d2eb" },
-  { name: "ASPEN 102.3", url: "https://mdstrm.com/audio/60a2745ff943100826374a70/icecast.audio" },
+  { name: "ASPEN 102.3", url: "https://playerservices.streamtheworld.com/api/livestream-redirect/ASPEN.mp3" },
   { name: "Vorterix Rock", url: "https://ice2.edge-apps.net/radio1_high-20057.audio" },
   { name: "radio free rock", url: "https://radioserver11.profesionalhosting.com:19250/live" },
   { name: "Radio Oldies Rock", url: "https://ice4.abradio.cz/oldiesrock128.mp3" },
-  { name: "HD Radio - Classic Rock", url: "https://hdradioclassicrock-rfritschka.radioca.st/" },
+  { name: "Finland Steel FM", url: "https://ice6.securenetsystems.net/STEELFM?playSessionID=C638EBD7-F2C3-BEA9-1BE25B178A37D1E3" },
   { name: "Scandinavian Satellite Radio", url: "https://stream.scansat.no/scansat_hq" },
   { name: "Myrock Danmark", url: "https://live-bauerdk.sharp-stream.com/myrock_dk_mp3" },
   { name: "Radio Drunk Norway", url: "https://node-33.zeno.fm/kg271rdzgm0uv" },
