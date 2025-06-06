@@ -20,10 +20,9 @@ const HomePage: React.FC<HomePageProps> = ({ radios }) => {
   useEffect(() => {
     if (audioRef.current) {
       audioRef.current.src = radios[currentRadioIndex].url
-      audioRef.current.volume = volume
       audioRef.current.play()
     }
-  }, [currentRadioIndex, radios, volume])
+  }, [currentRadioIndex, radios])
 
   useEffect(() => {
     if (audioRef.current) {
