@@ -71,49 +71,59 @@ const HomePage: React.FC<HomePageProps> = ({ radios }) => {
               <span>RK</span>
             </h1>
             <div className="h-1 w-40 bg-white mx-auto my-2"></div>
-            <h3 className="text-xl average-sans-regular">Tus Radios Internacionales</h3>
+            <h3 className="text-xl average-sans-regular">Tus radios de rock</h3>
           </div>
           <div className="h-1 w-full bg-white mt-3"></div>
         </div>
       </header>
 
       <section className="container mx-auto px-4 mt-10 w-120">
-        <div
-          id="reproductor"
-          className="bg-gray-900 bg-opacity-70 rounded-lg p-6 flex items-center justify-center gap-6"
-        >
-          <button
-            id="prevButton"
-            onClick={prevRadio}
-            className="bg-indigo-900 hover:bg-indigo-800 transition-colors px-4 py-2 rounded text-xl font-bold"
-          >
-            ◀
-          </button>
-          <button
-            id="playPause"
-            onClick={togglePlayPause}
-            className="bg-indigo-900 hover:bg-indigo-800 transition-colors px-6 py-2 rounded text-xl font-bold"
-          >
-            {isPlaying ? '⏸' : '▶'}
-          </button>
-          <button
-            id="nextButton"
-            onClick={nextRadio}
-            className="bg-indigo-900 hover:bg-indigo-800 transition-colors px-4 py-2 rounded text-xl font-bold"
-          >
-            ▶
-          </button>
-          <input
-            type="range"
-            id="volumeSlider"
-            min="0"
-            max="1"
-            step="0.1"
-            value={volume}
-            onChange={(e) => setVolume(parseFloat(e.target.value))}
-            className="w-40 h-2 rounded-lg accent-indigo-700 focus:accent-purple-700 cursor-pointer"
-          />
-        </div>
+        <div id="reproductor" className="bg-gray-900 bg-opacity-70 rounded-lg p-6 flex flex-col items-center gap-4">
+                 {/*  Controles del reproductor */}
+  <div className="flex items-center justify-center gap-6">
+    <button id="prevButton"onClick={prevRadio} className="bg-indigo-900 hover:bg-indigo-800 transition-colors px-4 py-2 rounded text-xl font-bold">
+      ◀
+    </button>
+    <button
+      id="playPause"
+      onClick={togglePlayPause}
+      className="bg-indigo-900 hover:bg-indigo-800 transition-colors px-6 py-2 rounded text-xl font-bold"
+    >
+      {isPlaying ? '⏸' : '▶'}
+    </button>
+    <button
+      id="nextButton"
+      onClick={nextRadio}
+      className="bg-indigo-900 hover:bg-indigo-800 transition-colors px-4 py-2 rounded text-xl font-bold"
+    >
+      ▶
+    </button>
+  </div>
+
+  {/* Control de volumen */}
+  <input
+    type="range"
+    id="volumeSlider"
+    min="0"
+    max="1"
+    step="0.1"
+    value={volume}
+    onChange={(e) => setVolume(parseFloat(e.target.value))}
+    className="w-40 h-3 rounded-lg accent-indigo-700 focus:accent-purple-700 cursor-pointer"
+  />
+
+  {/* Leyenda "Estás escuchando..." */}
+  <div className="text-sm text-indigo-300 font-medium flex items-center gap-2">
+   <span className="text-purple-400">🎶</span>
+   <span>Estás escuchando:</span>
+    <div className="marquee-container">
+      <span className="marquee-text text-white">
+       {radios?.[currentRadioIndex]?.name || "Cargando..."}
+      </span>
+    </div>
+  </div>
+  
+</div>
 
         <ul id="listaRadios" className="mt-8 max-w-md mx-auto space-y-3">
           {radios.map((radio, idx) => (
@@ -134,7 +144,7 @@ const HomePage: React.FC<HomePageProps> = ({ radios }) => {
 
       <audio ref={audioRef} />
 
-      <footer className="footer mt-12 text-center text-gray-300 text-sm pb-6">
+      <footer className="footer mt-12 text-right text-gray-300 text-sm pb-6">
         <p>Created by Jose Barzola.</p>
       </footer>
     </main>
