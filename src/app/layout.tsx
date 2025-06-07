@@ -14,6 +14,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Radio RK",
+  icons: {
+    icon: '/favicon.svg', // asegúrate de que el archivo se llame así
+  },
 };
 
 export default function RootLayout({
